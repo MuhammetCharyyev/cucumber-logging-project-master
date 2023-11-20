@@ -15,7 +15,8 @@ import org.slf4j.LoggerFactory;
 
 // com.cydeo.step_definitions.Google_StepDefinitions
 
-@Slf4j
+@Slf4j // annotation coming from Lombok library to not revoke constructor for Logging
+
 public class Google_StepDefinitions {
 
     GoogleSearchPage googleSearchPage = new GoogleSearchPage();
@@ -25,7 +26,7 @@ public class Google_StepDefinitions {
 
     @Given("user is on the Google search page")
     public void user_is_on_the_google_search_page() {
-        log.info("Navigating to https://www.google.com");
+        log.info("Navigating to https://www.google.com"); //initiate Log message
         Driver.getDriver().get("https://www.google.com");
         googleSearchPage.rejectCookieButton.click();
         BrowserUtils.sleep(1);
